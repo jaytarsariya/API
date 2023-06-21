@@ -77,8 +77,15 @@ router.post('/login', async (req, resp) => {
       
     }
     // resp.send("invalid Users !!!")
-  } catch (error) {
-    resp.send('invalid credentials !!!');
+  } catch (err) {
+    const error = 
+      {
+        code: '0',
+        message: 'invalid details',
+        data: {}
+      };
+
+      resp.send(error);
   }
 });
 
