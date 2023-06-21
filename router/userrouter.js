@@ -91,6 +91,28 @@ router.post('/login', async (req, resp) => {
 
 
 
+ router.get("/view", async (req,resp)=>{
+     try {
+      const data =await user.find()
+
+      resp.send(data)
+     } catch (err) {
+      
+      const error = 
+      {
+        code: '0',
+        message: 'invalid details',
+        data: {}
+      };
+
+      resp.send(error);
+
+     }
+   
+
+ })
+
+
 
 
 
